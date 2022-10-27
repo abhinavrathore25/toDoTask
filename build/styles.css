@@ -24,6 +24,11 @@ header h1 {
   font-weight: 200;
 }
 
+header h1 svg {
+  margin-right: 10px;
+  color: #f5ba13;
+}
+
 footer {
   position: fixed;
   text-align: center;
