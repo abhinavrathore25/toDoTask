@@ -1,0 +1,44 @@
+<div id="root">
+    <div className="container">
+        <header class="item">
+            <h1>
+                <HighlightIcon />
+                To-Do TASK
+            </h1>
+        </header>
+        <div className="item">
+            <form className="create-note">
+                {isExpanded && (
+                <input name="title" onChange={handleChange} value={note.title} placeholder="Title" />
+                )}
+
+                <textarea name="content" onClick={expand} onChange={handleChange} value={note.content}
+                    placeholder="Take a note..." rows={isExpanded ? 3 : 1} />
+                <Zoom in={isExpanded}>
+                    <Fab onClick={submitNote}>
+                        <AddIcon />
+                    </Fab>
+                </Zoom>
+            </form>
+        </div>
+
+
+        <div className="item inner-container">
+
+            <div className="inner-item note">
+                <h1>{props.title}</h1>
+                <p>{props.content}</p>
+                <button onClick={handleClick}>
+                    <DeleteIcon />
+                </button>
+            </div>
+
+        </div>
+
+        <footer className="item">
+            <p>Copyright ⓒ {year}</p>
+        </footer>
+    </div>
+
+
+</div>

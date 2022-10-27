@@ -7,21 +7,21 @@ import CreateArea from "./CreateArea";
 function App() {
   const [notes, setNotes] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     const data = JSON.parse(localStorage.getItem('data'));
-    if(data != null){
+    if (data != null) {
       setNotes(data);
     }
-  },[]);
+  }, []);
 
-  useEffect(()=> {
-    localStorage.setItem('data',JSON.stringify(notes));
-  },[notes]);
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(notes));
+  }, [notes]);
 
   function addNote(newNote) {
     setNotes(prevNotes => {
       return [...prevNotes, newNote];
-    });  
+    });
   }
 
   function deleteNote(id) {
@@ -33,23 +33,26 @@ function App() {
   }
 
   return (
-    <div>
+    <>
+    <div className="container">
       <Header />
       <CreateArea onAdd={addNote} />
-      {notes.map((noteItem, index)=>{
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            onDelete={deleteNote}
-          />
-        );
-      })}
-     
-      <Footer />
+      <div className="item inner-container">
+        {notes.map((noteItem, index) => {
+          return (
+            <Note
+              key={index}
+              id={index}
+              title={noteItem.title}
+              content={noteItem.content}
+              onDelete={deleteNote}
+            />
+          );
+        })}
+      </div>
     </div>
+      <Footer />
+    </>
   );
 }
 
