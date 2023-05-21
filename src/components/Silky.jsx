@@ -1,14 +1,12 @@
 import React from "react";
-import Silky from "./Silky";
 
-function Footer() {
+function Silky() {
   const year = new Date().getFullYear();
   return (
     <footer className="item">
-      <Silky />
       <p>Copyright ⓒ {year}</p>
     </footer>
   );
 }
 
-export default Footer;
+export default Silky;
