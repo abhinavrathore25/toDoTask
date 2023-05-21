@@ -5,6 +5,8 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
+
+  //Abhinav
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
