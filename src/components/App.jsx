@@ -8,7 +8,7 @@ function App() {
 
   //Abhinav
   const [notes, setNotes] = useState([]);
-  const [silky, setsilky] = useState('');
+  const [silky, setSilky] = useState('');  const [selfBagish,setSelfBagish]=useState('');
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('data'));
     if (data != null) {
