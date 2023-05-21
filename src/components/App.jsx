@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useNavigate } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -8,7 +8,7 @@ function App() {
 
   //Abhinav
   const [notes, setNotes] = useState([]);
-
+  const [selfBagish,setSelfBagish]=useState('');
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('data'));
     if (data != null) {
